@@ -16,8 +16,9 @@ public class UserService {
 		return "success";
 	}
 
-	public void update(User user) {
+	public void update(User user, Integer id ) {
 		System.out.println("user="+user);
+		user.setId(id);
 		userRepository.save(user);
 	}
 }

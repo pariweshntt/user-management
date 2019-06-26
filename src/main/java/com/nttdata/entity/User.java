@@ -1,6 +1,8 @@
 package com.nttdata.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
@@ -17,10 +19,11 @@ import lombok.ToString;
 @Entity
 public class User {
 	@Id
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private float age;
 	private String name;
-//	private float salary;
+	private float salary;
 //	private Address address;
 	
 }

@@ -1,6 +1,9 @@
 package com.nttdata;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,8 +19,8 @@ public class UserController {
 	public String create(@RequestBody User user){
 		return userService.createUser(user);
 	}
-	@PutMapping("/user")
-	public void update(@RequestBody User user) {
-		userService.update(user);
+	@PutMapping("/user/{id}")
+	public void update(@RequestBody User user, @PathVariable("id") Integer id) {
+		userService.update(user, id);
 	}
 }
