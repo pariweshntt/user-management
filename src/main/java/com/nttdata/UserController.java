@@ -10,9 +10,9 @@ import com.nttdata.entity.User;
 @RestController
 public class UserController {
 	@Autowired
-	UserService userService; //Dependency injection
-	@PostMapping("/user")
-	public void createUser(@RequestBody User user){
-		userService.createUser(user);
+	UserService userService ; //Dependency injection
+	@PostMapping("/user") //REST end point
+	public String create(@RequestBody User user){
+		return userService.createUser(user);
 	}
 }

@@ -7,7 +7,8 @@ import com.nttdata.entity.User;
 
 @Service
 public class UserService {
-	public void createUser(User user) {
-		System.out.println("name="+user.getSalary());
+	public String createUser(User user) {
+		System.out.println("user="+user);
+		return "success";
 	}
 }
