@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.nttdata.entity.User;
 
 @Service
+@Transactional(rollbackOn=Exception.class)
 public class UserService {
 	@Autowired
 	UserRepository userRepository;
-	@Transactional
 	public void createUser(User user) throws Exception {
 //		if(user.getSalary() <1000) {
 //			throw new IllegalArgumentException("Salary cannot be <1000");
 //		}
 		userRepository.save(user);
-//		throw new RuntimeException();
+//		throw new Exception();
 		
 //		return "success";
 	}
