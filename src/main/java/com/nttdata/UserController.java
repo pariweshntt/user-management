@@ -16,8 +16,8 @@ public class UserController {
 	@Autowired
 	UserService userService ;; //Dependency injection
 	@PostMapping("/user") //REST end point
-	public String create(@RequestBody User user){
-		return userService.createUser(user);
+	public void create(@RequestBody User user) throws Exception{
+		userService.createUser(user);
 	}
 	@PutMapping("/user/{id}")
 	public void update(@RequestBody User user, @PathVariable("id") Long id) {

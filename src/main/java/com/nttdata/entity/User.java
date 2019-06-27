@@ -25,7 +25,21 @@ public class User {
 	private String name;//mandatory
 	private float salary;
 //	private Address address;
+	public void setSalary(float salary) {
+		if(salary <= 0) {
+			throw new IllegalArgumentException("salary cannot be < 0");
+		}
+	}
+	public void setAge(float age) {
+		if(age <= 0) {
+			throw new IllegalArgumentException("Age cannot be < 0");
+		}
+	}
 	public void setName(String name) {
 		this.name=name.trim();
+		if(this.name==null ||this.name.isEmpty())
+		{
+			throw new IllegalArgumentException("Name is must");
+		}
 	}
 }
