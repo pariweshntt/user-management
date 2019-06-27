@@ -14,13 +14,13 @@ import com.nttdata.entity.User;
 @RestController
 public class UserController {
 	@Autowired
-	UserService userService ; //Dependency injection
+	UserService userService ;; //Dependency injection
 	@PostMapping("/user") //REST end point
 	public String create(@RequestBody User user){
 		return userService.createUser(user);
 	}
 	@PutMapping("/user/{id}")
-	public void update(@RequestBody User user, @PathVariable("id") Integer id) {
+	public void update(@RequestBody User user, @PathVariable("id") Long id) {
 		userService.update(user, id);
 	}
 }

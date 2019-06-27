@@ -22,8 +22,10 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private float age;
-	private String name;
+	private String name;//mandatory
 	private float salary;
 //	private Address address;
-	
+	public void setName(String name) {
+		this.name=name.trim();
+	}
 }
