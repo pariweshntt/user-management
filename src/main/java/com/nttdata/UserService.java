@@ -1,5 +1,7 @@
 package com.nttdata;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +29,9 @@ public class UserService {
 		System.out.println("user="+user);
 		user.setId(id);
 		userRepository.save(user);
+	}
+
+	public List<User> getUsers() {
+		return userRepository.findAll();
 	}
 }
