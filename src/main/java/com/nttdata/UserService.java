@@ -1,6 +1,7 @@
 package com.nttdata;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -33,5 +34,9 @@ public class UserService {
 
 	public List<User> getUsers() {
 		return userRepository.findAll();
+	}
+
+	public Optional<User> getUser(Long id) {
+		return userRepository.findById(id);
 	}
 }

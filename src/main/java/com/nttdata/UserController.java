@@ -1,6 +1,7 @@
 package com.nttdata;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.websocket.server.PathParam;
 
@@ -29,5 +30,9 @@ public class UserController {
 	@GetMapping("/user")
 	public List<User> getUsers(){
 		return userService.getUsers();
+	}
+	@GetMapping("/user/{id}")
+	public Optional<User> getUser(@PathVariable("id") Long id){
+		return userService.getUser(id);
 	}
 }
