@@ -16,7 +16,7 @@ import com.nttdata.entity.User;
 public class UserService {
 	@Autowired
 	UserRepository userRepository;
-	public void createUser(User user) throws Exception {
+	public void createUser(User user) {
 //		if(user.getSalary() <1000) {
 //			throw new IllegalArgumentException("Salary cannot be <1000");
 //		}
